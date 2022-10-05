@@ -1,7 +1,7 @@
 const express = require('express')
 const router = require('./router/index')
 const app = express()
-const port = 3000
+require('dotenv').config()
 
 const db = require('./models/db')
 db.connect()
@@ -20,6 +20,6 @@ app.get('/', (req, res) => {
 //router
 router(app)
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(process.env.POST, () => {
+    console.log(`Example app listening on port`)
 })
