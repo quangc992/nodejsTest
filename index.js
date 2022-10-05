@@ -1,6 +1,7 @@
 const express = require('express')
 const router = require('./router/index')
 const app = express()
+const port = process.env.POST || 9000
 require('dotenv').config()
 
 const db = require('./models/db')
@@ -20,6 +21,6 @@ app.get('/', (req, res) => {
 //router
 router(app)
 
-app.listen(process.env.POST, () => {
-    console.log(`Example app listening on port`)
+app.listen(port, () => {
+    console.log(`Example app listening on ${port}`)
 })
